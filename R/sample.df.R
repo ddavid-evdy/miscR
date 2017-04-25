@@ -3,7 +3,7 @@ sample.df <- function(df, size, strata=NULL) {
   if (is.null(strata)) {
     # Simple random sample
 
-    if (size < 1) {size <- nrow(df) * size}
+    if (size < 1) {size <- round(nrow(df) * size, 0)}
     sample <- df[sample(nrow(df), size),]
 
   } else {
@@ -19,7 +19,8 @@ sample.df <- function(df, size, strata=NULL) {
 
     } else {
 
-      # create list of the same length as number of strata, each element being filled with the user-defined size
+      # create list of the same length as number of strata, each element being
+      # filled with the user-defined size
       ls.sizes <- list()
       for (i in 1:length(ls.split)) {
         if (size > nrow(ls.split[[i]])) {
