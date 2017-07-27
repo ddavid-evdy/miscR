@@ -88,7 +88,8 @@ the value of rows_at_time.
 }
 \examples{
 # To connect using a locally stored credentials file
-auth.connect(DSN = "SomeDSN", creds.file = "C:/Users/John Smith/Documents/CredsFile.csv")
+auth.connect(DSN = "SomeDSN",
+             creds.file = "C:/Users/John Smith/Documents/CredsFile.csv")
 
 # To be prompted for appropriate username and password
 auth.connect(DSN = "SomeDSN")
