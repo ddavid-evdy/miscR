@@ -1,5 +1,5 @@
 library(miscR)
-context("Returned sample size")
+context("sample.df")
 
 
 test_that("simple sample returns correct percent", {
