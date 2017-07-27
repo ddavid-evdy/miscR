@@ -91,10 +91,10 @@ the value of rows_at_time.
 auth.connect(DSN = "SomeDSN",
              creds.file = "C:/Users/John Smith/Documents/CredsFile.csv")
 
-# To be prompted for appropriate username and password
+# To be prompted for a username and password
 auth.connect(DSN = "SomeDSN")
 
-# To be prompted for appropriate password only
+# To be prompted for a password only
 auth.connect(DSN = "DSN2", UID = "jsmith")
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
