@@ -1,4 +1,6 @@
-sample.df <- function(df, size, strata=NULL) {
+sample.df <- function(df, size, strata = NULL, sample.only = NULL) {
+
+  df$rowID <- rownames(df)
 
   if (is.null(strata)) {
     # Simple random sample
@@ -40,5 +42,14 @@ sample.df <- function(df, size, strata=NULL) {
     sample <- Reduce(rbind, samples)
   }
 
+  # Return entire dataframe with sample marked, or the sample only
+  if (is.null(sample.only)) {
+    sample$sample <- 1
+    sample <- merge(df, sample[, c(ncol(sample) - 1, ncol(sample))],
+                    by = "rowID", all.x = TRUE)
+    sample$sample <- ifelse(is.na(sample$sample), 0, 1)
+  }
+
+  sample$rowID <- NULL
   return(sample)
 }
