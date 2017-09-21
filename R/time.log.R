@@ -29,7 +29,9 @@ time.log <- local({
           stop("Cannot alter unit after log is created")
         }
       }
-      df.time[nrow(df.time), "comment"] <<- comment
+      if (!is.null(comment)){
+        df.time[nrow(df.time), "comment"] <<- comment
+      }
 
     } else if (action == "return") {
       return(df.time)
