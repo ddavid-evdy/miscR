@@ -14,9 +14,9 @@ time.log(action = "log", unit = "mins", comment = NULL)
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{action}{
-Character string stating the action to be performed. Accepts 3 values: "log", "return", and "clear"
+Character string stating the action to be performed. Accepts 3 values: "log", "return", and "clear".
   "log" appends the table with a new row containing the current system time, as well as calculations
-  for iteration time and total run time. "return" returns the log for viewing or storing as a
+  for iteration run time and total run time. "return" returns the log for viewing or storing as a
   dataframe. "clear" Clears the log.
 }
   \item{unit}{
