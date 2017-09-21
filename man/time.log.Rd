@@ -15,10 +15,10 @@ time.log(action = "log", unit = "mins", comment = NULL)
 \arguments{
   \item{action}{
 Character string stating the action to be performed. Accepts 3 values:
-  \tab{log} \tab{Appends the table with a new row containing the current system time, as well as
-  calculations for iteration time and total run time.}
-  \tab{return} \tab{Returns the log for viewing or storing as a dataframe.}
-  \tab{clear} \tab{Clears the log.}
+  log: Appends the table with a new row containing the current system time, as well as calculations
+  for iteration time and total run time.
+  return: Returns the log for viewing or storing as a dataframe.
+  clear: Clears the log.
 }
   \item{unit}{
 Base unit to use when measuring time. Accepts "secs",mins","hours","days", and "weeks".
