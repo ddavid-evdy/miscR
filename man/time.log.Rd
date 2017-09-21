@@ -20,7 +20,7 @@ Character string stating the action to be performed. Accepts 3 values: "log", "r
   dataframe. "clear" Clears the log.
 }
   \item{unit}{
-Base unit to use when measuring time. Accepts "secs",mins","hours","days", and "weeks".
+Base unit to use when measuring time. Accepts "secs", "mins", "hours", "days", and "weeks".
 }
   \item{comment}{
 Character string containing any comment the user may want to in that line of the time log.
