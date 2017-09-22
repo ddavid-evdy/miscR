@@ -12,19 +12,30 @@ time.log <- local({
   function(action = "log", unit = NULL, comment = NULL) {
 
     if (action == "log") {
-      df.time[nrow(df.time) + 1, "time"] <<- Sys.time()
-      row <- nrow(df.time)
 
-      if (row == 1) {
-        u <<- unit
+      if (nrow(df.time) == 0) {
+
+        if (!is.null(unit)){
+          if (unit %in% c("secs", "mins", "hours", "days")){
+            u <<- unit
+          } else {
+            stop("Unrecognized unit. Accepts only secs, mins, hours, & days.")
+          }
+        }
+
+        row <- nrow(df.time) + 1
+        df.time[row, 1] <<- Sys.time()
         df.time[row, 2] <<- 0
         df.time[row, 3] <<- 0
-      } else {
 
-        if (u == unit || is.null(unit)) {
-          # Calculating row.time, then total.time
-          df.time[row, 2] <<- round(difftime(df.time[row, 1], df.time[row - 1, 1], units=u), 3)
+      } else {
+        if (unit == u || is.null(unit)) {
+
+          row <- nrow(df.time) + 1
+          df.time[row, 1] <<- Sys.time()
+          df.time[row, 2] <<- round(difftime(df.time[row, 1], df.time[row - 1, 1], units = u), 3)
           df.time[row, 3] <<- round(df.time[row - 1, 3] + df.time[row, 2], 3)
+
         } else {
           stop("Cannot alter unit after log is created")
         }
